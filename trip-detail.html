@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Trip Details</title>
+    <link rel="stylesheet" href="../styles/trip-detail.css">
+    <link rel="stylesheet" href="../styles/menu.css">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <button class="menu-button">&#9776;</button>
+        <div class="logo-header">
+            <span class="logo-text">World Explorer</span>
+        </div>
+    <nav class="main-nav">
+        <a href="../homepage.html">Home</a>
+        <a href="plan-trip.html">New Trip</a>
+        <a href="upcoming-trips.html">Upcoming Trip</a>
+
+    </nav>
+    </header>
+    
+    <div class="container">
+        <div id="countryInfo"></div>
+        <form id="tripForm">
+            <h2 class="form-title">Plan Your Trip Details</h2>
+            
+            <div class="form-section">
+                <h3>Notes</h3>
+                <div class="a">
+                    <label for="notes">Notes</label>
+                    <textarea name="notes" id="notes" placeholder="Notes"></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Flight Details</h3>
+                <div class="a">
+                    <label for="flightno">No. of Flight</label>
+                    <input type="text" name="flightno" id="flightno" placeholder="No. of Flight">
+                </div>
+                <div class="a">
+                    <label for="depart">Depart</label>
+                    <input type="datetime-local" name="depart" id="depart">
+                </div>
+                <div class="a">
+                    <label for="arrive">Arrive</label>
+                    <input type="datetime-local" name="arrive" id="arrive">
+                </div>
+                <div class="a">
+                    <label for="flightnotes">Flight Notes</label>
+                    <input type="text" name="flightnotes" id="flightnotes" placeholder="Flight Notes">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Hotel & Lodging</h3>
+                <div class="a">
+                    <label for="hotel">Hotel Location</label>
+                    <input type="text" name="hotel" id="hotel" placeholder="Hotel Location">
+                </div>
+                <div class="a">
+                    <label for="checkin">Check in</label>
+                    <input type="date" name="checkin" id="checkin">
+                </div>
+                <div class="a">
+                    <label for="checkout">Check out</label>
+                    <input type="date" name="checkout" id="checkout">
+                </div>
+                <div class="a">
+                    <label for="days">Total Days</label>
+                    <input type="text" name="days" id="days" placeholder="Total Days" readonly>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                <span>Add to Wishlist</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </button>
+        </form>
+    </div>
+
+    <!-- Success Popup -->
+    <div id="successPopup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:1000;">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:white;padding:30px;border-radius:8px;text-align:center;max-width:400px;width:90%;">
+            <span onclick="closePopup('successPopup')" style="position:absolute;top:10px;right:15px;font-size:24px;cursor:pointer;">&times;</span>
+            <h3>Success!</h3>
+            <p>Your trip has been successfully added to your wishlist!</p>
+            <button onclick="closePopup('successPopup')" style="padding:10px 20px;background:#667eea;color:white;border:none;border-radius:5px;cursor:pointer;margin-top:15px;">OK</button>
+        </div>
+    </div>
+
+    <!-- Failure Popup -->
+    <div id="failurePopup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:1000;">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:white;padding:30px;border-radius:8px;text-align:center;max-width:400px;width:90%;">
+            <span onclick="closePopup('failurePopup')" style="position:absolute;top:10px;right:15px;font-size:24px;cursor:pointer;">&times;</span>
+            <h3>Form Incomplete</h3>
+            <p id="failureMessage">Please fill in all required fields before submitting.</p>
+            <button onclick="closePopup('failurePopup')" style="padding:10px 20px;background:#667eea;color:white;border:none;border-radius:5px;cursor:pointer;margin-top:15px;">OK</button>
+        </div>
+    </div>
+
+    <script src="trip-detail.js"></script>
+</body>
+</html>

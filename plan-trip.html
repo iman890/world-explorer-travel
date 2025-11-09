@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Your Trip</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/menu.css">
+</head>
+<body>
+   <header class="main-header">
+        <button class="menu-button">&#9776;</button>
+        <div class="logo-header">
+            <span class="logo-text">World Explorer</span>
+        </div>
+    <nav class="main-nav">
+        <a href="../homepage.html">Home</a>
+        <a href="plan-trip.html">New Trip</a>
+        <a href="upcoming-trips.html">Upcoming Trip</a>
+    </nav>
+    </header>
+
+    <!-- SEARCH SECTION -->
+    <section class="main-section" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://media.istockphoto.com/id/1497396873/photo/ready-for-starting-my-beach-holiday.jpg?s=612x612&w=0&k=20&c=Rfb7IbYAZR1hNTF6KUDYq8CVu9Yr4wRgK2VLZIZyORY='); background-size: cover; background-position: center; height: 500px; display: flex; align-items: center; justify-content: center;">
+    <div class="intro-container" style="text-align: center; color: white;">
+        <p class="welcome" style="font-size: 3rem; font-weight: bold; margin-bottom: 30px; color: wheat;">
+            PLAN YOUR TRIP NOW
+        </p>
+        <div class="searching" style="display: flex; justify-content: center; gap: 10px;">
+            <input type="text" id="countryInput" placeholder="Enter your next trip" class="search-input" style="padding: 12px 20px; border: none; border-radius: 25px; width: 300px; font-size: 16px;">
+            <button onclick="searchCountry()" class="search-button" style="padding: 12px 25px; background: #667eea; color: white; border: none; border-radius: 25px; cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 16px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                Search
+            </button>
+        </div>
+    </div>
+</section>
+
+    <script>
+    function searchCountry() {
+        const val = document.getElementById('countryInput').value.trim();
+        if(val) {
+            window.location.href = `trip-detail.html?country=${encodeURIComponent(val)}`;
+        }
+    }
+    
+    document.getElementById('countryInput').addEventListener('keypress', function(e) {
+        if(e.key === 'Enter') {
+            searchCountry();
+        }
+    });
+    </script>
+</body>
+</html>

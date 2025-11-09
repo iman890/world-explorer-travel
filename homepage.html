@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Explorer</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/menu.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-header">
+            <span class="logo-text">World Explorer</span>
+        </div>
+    <nav class="main-nav">
+        <a href="homepage.html">Home</a>
+        <a href="pages/plan-trip.html">New Trip</a>
+        <a href="pages/upcoming-trips.html">Upcoming Trip</a>
+    </nav>
+ 
+    </header>
+
+
+    <section class="main-section">
+        <div class="intro-container">
+            <p class="welcome">Welcome To World Explorer!</p>
+            <h1 class="title">FIND WHAT YOU'RE LOOKING FOR</h1>
+            <div class="searching">
+                <input type="text" id="countryInput" placeholder="country" class="search-input">
+                <button onclick="searchCountry()" class="search-button">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    Search
+                </button>
+            </div>
+            <p class="description">Discover countries around the world, explore their cultures, and find the perfect destination for your next adventure.</p>
+          
+        </div>
+    </section>
+
+    <!-- MOTIVITIONAL POPUP -->
+    <div id="motivationPopup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h3>✨ Travel Inspiration</h3>
+            <p id="motivationText"></p>
+        </div>
+    </div>
+
+    <!-- POPULAR COUNTRY -->
+    <section class="popular-countries">
+        <div class="popular-countries-container">
+            <h2 class="popular-countries-title">Popular Countries</h2>
+            <p class="popular-countries-subtitle">Explore our most searched destinations and discover amazing places around the world.</p>
+            
+            <div class="country-features-grid">
+                <div class="country-feature-card" onclick="quickSearch('malaysia')">
+                    <div class="country-feature-icon">
+                        <img src="https://flagcdn.com/w320/my.png" alt="Malaysia">
+                    </div>
+                    <h3 class="country-feature-title">Malaysia</h3>
+                    <p class="country-feature-description">Discover the vibrant culture, stunning beaches, and delicious cuisine of this Southeast Asian gem.</p>
+                </div>
+                
+                <div class="country-feature-card" onclick="quickSearch('japan')">
+                    <div class="country-feature-icon">
+                        <img src="https://flagcdn.com/w320/jp.png" alt="Japan">
+                    </div>
+                    <h3 class="country-feature-title">Japan</h3>
+                    <p class="country-feature-description">Experience the perfect blend of ancient traditions and modern innovation in the Land of the Rising Sun.</p>
+                </div>
+                
+                <div class="country-feature-card" onclick="quickSearch('france')">
+                    <div class="country-feature-icon">
+                        <img src="https://flagcdn.com/w320/fr.png" alt="France">
+                    </div>
+                    <h3 class="country-feature-title">France</h3>
+                    <p class="country-feature-description">Explore the romance, art, and culinary excellence of one of Europe's most beautiful countries.</p>
+                </div>
+                
+                <div class="country-feature-card" onclick="quickSearch('usa')">
+                    <div class="country-feature-icon">
+                        <img src="https://flagcdn.com/w320/us.png" alt="USA">
+                    </div>
+                    <h3 class="country-feature-title">USA</h3>
+                    <p class="country-feature-description">From coast to coast, discover the diverse landscapes and cultures of the United States.</p>
+                </div>
+                
+                <div class="country-feature-card" onclick="quickSearch('italy')">
+                    <div class="country-feature-icon">
+                        <img src="https://flagcdn.com/w320/it.png" alt="Italy">
+                    </div>
+                    <h3 class="country-feature-title">Italy</h3>
+                    <p class="country-feature-description">Immerse yourself in rich history, world-class art, and authentic Italian cuisine.</p>
+                </div>
+                
+                <div class="country-feature-card" onclick="quickSearch('spain')">
+                    <div class="country-feature-icon">
+                        <img src="https://flagcdn.com/w320/es.png" alt="Spain">
+                    </div>
+                    <h3 class="country-feature-title">Spain</h3>
+                    <p class="country-feature-description">Experience the passion, architecture, and vibrant culture of this Mediterranean paradise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="homepage.js"></script>
+</body>
+</html>
